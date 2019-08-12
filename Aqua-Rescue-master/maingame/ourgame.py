@@ -23,13 +23,12 @@ creditspage = pygame.image.load("images/creditsbg.png")
 # hitSound = pygame.mixer.Sound("hit.wav")
 def music(sound):
     if sound == 1:
-        pygame.mixer.music.load("music/gameovermusic.mp3")
+        pygame.mixer.music.load("music/gameovermusic.mp3")#game over music
         pygame.mixer.music.play(0, 5)
     else:
-        pygame.mixer.music.load("music/pixelparty.mp3") #comment in for music
-        pygame.mixer.music.play(-1) # -1 will ensure the song keeps looping #comment in for music
-    # print(sound)
-# game music is 8 bit pixel party and game over music is moonlight sonata 8 bit
+        pygame.mixer.music.load("music/pixelparty.mp3") #music
+        pygame.mixer.music.play(-1) # -1 will ensure the song keeps looping 
+    # print(sound)t
 music(0)
 #loading images
 playgame = pygame.image.load("images/playgame.png")
@@ -214,7 +213,7 @@ def loading():
 #         win.blit(djetpackright[walkCount//3])
 #         walkCount += 1
 #         pygame.display.update()
-def dogmove(x,y,lor): #music loop here right?
+def dogmove(x,y,lor): 
     height = 72
     width = 96
     vel = 15
@@ -237,16 +236,15 @@ def dogmove(x,y,lor): #music loop here right?
     #  left = False
     #  walkCount = 0
     # if not(isJump):
-    elif keys[pygame.K_UP] and (not y < vel):  #if we don't need them moving up and down with the arrow keys keep both up and down commented out but leave in the space key
-        y -= vel
+    elif keys[pygame.K_UP] and (not y < vel):  
         return x,y,lor
     elif keys[pygame.K_DOWN]and (not y > (630-height-vel)):
         y += vel
         return x,y,lor
     else:
         return x,y,lor
-#     # screen.blit(dogjetpack[0], (585,600))
-#     # redrawGameWindow()
+     # screen.blit(dogjetpack[0], (585,600))
+     # redrawGameWindow()
 def levelone(comp):
     global flag
     text = font.render('Level 1', True, black)
@@ -574,7 +572,7 @@ pygame.quit()
     # if keys[pygame.K_RIGHT] and (not x > (1120-width-vel)) :
     #     x += vel
     #   if not(isJump):
-    # if keys[pygame.K_UP] and (not y < vel):  #if we don't need them moving up and down with the arrow keys keep both up and down commented out but leave in the space key
+    # if keys[pygame.K_UP] and (not y < vel):  
     #     y -= vel
     # if keys[pygame.K_DOWN]and (not y > (630-height-vel)):
     #     y += vel
@@ -596,7 +594,4 @@ pygame.quit()
     # screen.blit(dogjetpack[0], (585,600))
     # pygame.mixer.quit()
 # if __name__=='__main__':
-#     cf.surface=pygame.display.set_mode((854, 480))bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-# boooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000oooooooooooooooooooooooooooooo
-# ooooooooooboooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000oooooooooooooooooooooooooooooo
-# oooooooooo
+#     cf.surface=pygame.display.set_mode((854, 480))
